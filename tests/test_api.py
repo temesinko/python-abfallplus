@@ -73,7 +73,7 @@ class ApiTest(unittest.TestCase):
             action='auswahl_strasse_set',
         )
         responses.add(POST, url, body=self.read_sample_file('widget_auswahl_strasse_set.html'))
-        resp = self.api.get_waste_types('test_key', 1234, 2345)
+        resp = self.api.get_waste_types('test_key', 2345)
         self.assertEqual(len(resp), 8)
         self.assertTrue(type(resp[0]) is abfallplus.WasteType)
         self.assertEqual(resp[0].id, 27)

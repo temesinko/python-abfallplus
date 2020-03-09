@@ -76,21 +76,21 @@ print(api.get_communities('248deacbb49b06e868d29cb53c8ef034'))
 ```
 
 ### Fetching all available streets
-To fetch all available streets in a community of a waste management company:
+To fetch all available streets in a community:
 ```python
 print(api.get_streets('248deacbb49b06e868d29cb53c8ef034', 2326))
 # [Street(ID=1459, Title='Am Alten Bahnhof'), Street(ID=1460, Title='Am Fichtenstrauch'), ...]
 ```
 
 ### Fetching all available waste types
-To fetch all available waste types for a street in a community of a waste management company:
+To fetch all available waste types for a street:
 ```python
-print(api.get_waste_types('248deacbb49b06e868d29cb53c8ef034', 2326, 1459))
+print(api.get_waste_types('248deacbb49b06e868d29cb53c8ef034', 1459))
 # [WasteType(ID=27, Title='Altpapier'), WasteType(ID=28, Title='Bioabfall'), WasteType(ID=17, Title='Gelber Sack'), ...]
 ```
 
 ### Fetching all waste collection dates
-To fetch all waste collection dates grouped by waste type for a street (you don't need the community id here):
+To fetch all waste collection dates grouped by waste type for a street:
 ```python
 print(api.get_waste_collection_dates('248deacbb49b06e868d29cb53c8ef034', 1459, datetime(2020, 1, 1), datetime(2020, 12, 31)))
 # {'Bioabfall': ['07.01.2020', '21.01.2020', '04.02.2020', ...], ...}

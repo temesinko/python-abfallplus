@@ -91,15 +91,12 @@ class Api(object):
 
     def get_waste_types(self,
                         company_key,
-                        community_id,
                         street_id):
-        """Return all streets in the defined community covered by the waste management company behind the defined key
+        """Return all waste types in the specified street covered by the waste management company behind the defined key
 
         Args:
             company_key (str):
                 Key of the waste management company
-            community_id (int):
-                ID of the community
             street_id (int):
                 ID of the street
         Returns:
@@ -114,7 +111,6 @@ class Api(object):
         }
 
         data = {
-            'f_id_kommune': community_id,
             'f_id_strasse': street_id,
         }
 
