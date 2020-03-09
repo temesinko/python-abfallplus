@@ -1,6 +1,9 @@
 # python-abfallplus
 A Python wrapper for [Abfall+](https://www.abfallplus.de/) API
 
+[![PyPI version](https://img.shields.io/pypi/v/abfallplus)](https://pypi.python.org/pypi/abfallplus/)
+[![PyPI license](https://img.shields.io/pypi/l/abfallplus)](https://pypi.python.org/pypi/abfallplus/)
+
 # Description
 This library provides a Python interface for the [Abfall+](https://www.abfallplus.de/) API.
 
