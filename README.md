@@ -12,7 +12,7 @@ This library provides a Python interface for the [Abfall+](https://www.abfallplu
 # Installing
 You can install python-abfallplus using:
 ```
-$ pip install python-abfallplus
+$ pip install abfallplus
 ```
 
 # Getting the source code
