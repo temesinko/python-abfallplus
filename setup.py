@@ -11,7 +11,7 @@ with open(os.path.join(cwd, 'README.md'), encoding='utf-8') as f:
 if __name__ == '__main__':
     setup(
         name='abfallplus',
-        version='0.1.2',
+        version='0.1.3',
         description='A Python wrapper for the Abfall+ API',
         long_description=long_description,
         long_description_content_type='text/markdown',
