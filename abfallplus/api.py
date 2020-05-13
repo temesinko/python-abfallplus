@@ -22,6 +22,10 @@ class Api(object):
     BASE_URL_WEBSITE = 'https://www.abfallplus.de'
     BASE_URL_API = 'https://api.abfall.io'
     MODE_COMPANY_WIDGET = 'd6c5855a62cf32a4dadbc2831f0f295f'
+    DEFAULT_HEADERS = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) '
+                      'Chrome/81.0.4044.138 Safari/537.36'
+    }
 
     def __init__(self):
         """Instantiate a new abfallplus.Api object."""
@@ -44,7 +48,7 @@ class Api(object):
             'waction': 'init'
         }
 
-        resp = requests.get(url, params)
+        resp = requests.get(url, params, headers=self.DEFAULT_HEADERS)
         soup = BeautifulSoup(resp.text, 'html.parser')
         communities = []
 
@@ -77,7 +81,7 @@ class Api(object):
             'waction': 'auswahl_kommune_set'
         }
 
-        resp = requests.post(url, {'f_id_kommune': community_id}, params=params)
+        resp = requests.post(url, {'f_id_kommune': community_id}, params=params, headers=self.DEFAULT_HEADERS)
         soup = BeautifulSoup(resp.text, 'html.parser')
         streets = []
 
@@ -114,7 +118,7 @@ class Api(object):
             'f_id_strasse': street_id,
         }
 
-        resp = requests.post(url, data, params=params)
+        resp = requests.post(url, data, params=params, headers=self.DEFAULT_HEADERS)
         soup = BeautifulSoup(resp.text, 'html.parser')
         waste_types = []
 
@@ -170,7 +174,7 @@ class Api(object):
             'f_zeitraum': '{}-{}'.format(date_from.strftime("%Y%m%d"), date_to.strftime("%Y%m%d"))
         }
 
-        resp = requests.post(url, data, params=params)
+        resp = requests.post(url, data, params=params, headers=self.DEFAULT_HEADERS)
         waste_collection_dates = {}
 
         reader = csv.reader(resp.text.splitlines(), delimiter=';')
